@@ -32,6 +32,8 @@ namespace BabyCareProject.Areas.Admin.Controllers
                                        Value = x.FullName
                                    }).ToList();
             return View();
+
+
         }
 
         [HttpPost]  
