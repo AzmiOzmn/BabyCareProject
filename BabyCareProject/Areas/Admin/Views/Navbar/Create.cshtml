@@ -1,0 +1,33 @@
+﻿@using BabyCareProject.Dtos.NavbarDtos
+@model CreateNavbarDto
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>Yeni Navbar Ekle</h1>
+
+<form method="post" asp-area="Admin">
+    <label>Konum</label>
+    <input type="text" asp-for="Location" class="form-control" />
+    <br />
+    <label>Email</label>
+    <input type="email" asp-for="Email" class="form-control" />
+    <br />
+    <label>Sosyal Medya Url 1</label>
+    <input type="text" asp-for="SocialMediaUrl" class="form-control" />
+    <br />
+    <label>Sosyal Medya Url 2</label>
+    <input type="text" asp-for="SocialMediaUrl1" class="form-control" />
+    <br />
+    <label>Sosyal Medya Url 3</label>
+    <input type="text" asp-for="SocialMediaUrl2" class="form-control" />
+    <br />
+    <label>Sosyal Medya Url 4</label>
+    <input type="text" asp-for="SocialMediaUrl3" class="form-control" />
+    <br />
+    
+
+
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+
+

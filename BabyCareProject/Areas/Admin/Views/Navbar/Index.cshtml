@@ -1,0 +1,44 @@
+﻿@using BabyCareProject.Dtos.NavbarDtos
+@model List<ResultNavbarDto>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<h1>Navbar</h1>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Konum</th>
+        <th>Email</th>
+        <th>Sosyal Medya</th>
+        <th>Sosyal Medya 2</th>
+        <th>Sosyal Medya 3</th>
+        <th>Sosyal Medya 4</th>
+       
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <th>@item.Location</th>
+            <th>@item.Email</th>
+            <th>@item.SocialMediaUrl</th>
+            <th>@item.SocialMediaUrl1</th>
+            <th>@item.SocialMediaUrl2</th>
+            <th>@item.SocialMediaUrl3</th>
+            <td>
+                <a href="/Admin/Navbar/Delete/@item.NavbarId" class="btn btn-danger">Sil</a>
+                <a href="/Admin/Navbar/Update/@item.NavbarId" class="btn btn-info">Güncelle</a>
+            </td>
+        </tr>
+
+    }
+</table>
+<a href="/Admin/Navbar/Create" class="btn btn-primary">Yeni Navbar</a>
+

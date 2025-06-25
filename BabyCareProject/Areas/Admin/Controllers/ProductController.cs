@@ -36,13 +36,23 @@ namespace BabyCareProject.Areas.Admin.Controllers
 
         }
 
-        [HttpPost]  
-
+        [HttpPost]
         public async Task<IActionResult> CreateProduct(CreateProductDto createProductDto)
         {
+           
+            var instructor = (await instructorService.GetAllInstructorAsync())
+                .FirstOrDefault(x => x.FullName == createProductDto.InstructorName);
+
+            if (instructor != null)
+            {
+                createProductDto.InstructorImage = instructor.ImageUrl;
+                createProductDto.InstructorTitle = instructor.Title;
+            }
+
             await productService.CreateAsycn(createProductDto);
             return RedirectToAction("Index");
         }
+
 
         public async Task<IActionResult> Update(string id)
         {
@@ -61,12 +71,21 @@ namespace BabyCareProject.Areas.Admin.Controllers
 
 
         [HttpPost]
-
         public async Task<IActionResult> Update(UpdateProductDto updateProductDto)
         {
+            var instructor = (await instructorService.GetAllInstructorAsync())
+                .FirstOrDefault(x => x.FullName == updateProductDto.InstructorName);
+
+            if (instructor != null)
+            {
+                updateProductDto.InstructorImage = instructor.ImageUrl;
+                updateProductDto.InstructorTitle = instructor.Title;
+            }
+
             await productService.UpdateAsync(updateProductDto);
             return RedirectToAction(nameof(Index));
         }
+
 
 
     }
