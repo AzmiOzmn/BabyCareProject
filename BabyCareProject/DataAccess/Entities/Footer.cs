@@ -1,0 +1,21 @@
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
+namespace BabyCareProject.DataAccess.Entities
+{
+    public class Footer
+    {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string FooterId { get; set; } 
+        public string Title { get; set; } 
+        public string Description { get; set; } 
+        public string WorkingHours { get; set; } 
+        public string Location { get; set; } 
+        public string PhoneNumber { get; set; } 
+        public string Email { get; set; } 
+        public string Service { get; set; } 
+        public string Gallary { get; set; } 
+        
+    }
+}
