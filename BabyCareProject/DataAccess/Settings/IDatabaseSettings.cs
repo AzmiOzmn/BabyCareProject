@@ -7,5 +7,6 @@
         public string InstructorCollectionName { get; set; }
         public string ProductCollectionName { get; set; }
         public string NavbarCollectionName { get; }
+        public string AboutCollectionName { get; }
     }
 }
