@@ -36,9 +36,9 @@ namespace BabyCareProject.Services.AboutServices
             return _mapper.Map<List<ResultAboutDto>>(values);
         }
 
-        public async Task UpdateAboutAsync(UpdateAboutDto createAboutDto)
+        public async Task UpdateAboutAsync(UpdateAboutDto updateAboutDto)
         {
-            var about = _mapper.Map<About>(createAboutDto);
+            var about = _mapper.Map<About>(updateAboutDto);
             await _aboutCollection.FindOneAndReplaceAsync(x => x.AboutId == about.AboutId, about);
         }
 

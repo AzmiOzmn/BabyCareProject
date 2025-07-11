@@ -8,7 +8,7 @@ namespace BabyCareProject.Services.AboutServices
         Task<UpdateAboutDto> UpdateByIdAsync(string id);
 
         Task CreateAboutAsync (CreateAboutDto createAboutDto);
-        Task UpdateAboutAsync (UpdateAboutDto createAboutDto);
+        Task UpdateAboutAsync (UpdateAboutDto updateAboutDto);
         Task DeleteAboutAsync (string id);
 
         
