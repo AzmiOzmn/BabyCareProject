@@ -1,0 +1,35 @@
+﻿@using BabyCareProject.Dtos.FooterDtos
+@model CreateFooterDto
+@{
+    ViewData["Title"] = "CreateFooter";
+}
+
+<h1>Yeni Footer Ekle</h1>
+
+<form method="post" asp-area="Admin">
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+    <label>Çalışma saatleri</label>
+    <input type="number" asp-for="WorkingHours" class="form-control" />
+    <br />
+    <label>Lokasyon</label>
+    <input type="text" asp-for="Location" class="form-control" />
+    <br />
+    <label>Telefon numarası</label>
+    <input type="number" asp-for="PhoneNumber" class="form-control" />
+    <br />
+    <label>Hizmetler</label>
+    <input type="text" asp-for="Service" class="form-control" />
+    <br />
+    <label>Galeri</label>
+    <input type="text" asp-for="Gallary" class="form-control" />
+    <br />
+
+
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+

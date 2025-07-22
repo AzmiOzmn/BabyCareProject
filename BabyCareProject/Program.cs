@@ -1,4 +1,5 @@
 using BabyCareProject.DataAccess.Settings;
+using BabyCareProject.Services.FooterServices;
 using BabyCareProject.Services.InstructorServices;
 using BabyCareProject.Services.NavbarServices;
 using BabyCareProject.Services.ProductSerrvices;
@@ -21,6 +22,7 @@ builder.Services.AddSingleton<IDatabaseSettings>(sp =>
 builder.Services.AddScoped<IInstructorService, InstructorService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<INavbarService, NavbarService>();
+builder.Services.AddScoped<IFooterService, FooterService>();
 
 builder.Services.AddControllersWithViews();
 

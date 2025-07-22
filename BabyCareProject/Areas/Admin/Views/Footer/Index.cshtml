@@ -1,0 +1,46 @@
+﻿@using BabyCareProject.Dtos.FooterDtos
+@model List<ResultFooterDto>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<h1>Footer Ayarları</h1>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Çalışma Saatleri</th>
+        <th>Lokasyon</th>
+        <th>Telefon Numarası</th>
+        <th>Hizmetler</th>
+        <th>Galeri</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <th>@item.Title</th>
+            <th>@item.Description</th>
+            <th>@item.WorkingHours</th>
+            <th>@item.Location</th>
+            <th>@item.PhoneNumber</th>
+            <th>@item.Service</th>
+            <th>@item.Gallary</th>
+            <td>
+                <a href="/Admin/Footer/Delete/@item.FooterId" class="btn btn-danger">Sil</a>
+                <a href="/Admin/Footer/UpdateFooter/@item.FooterId" class="btn btn-info">Güncelle</a>
+            </td>
+            <th><img src="@item.Gallary" style="height:75px;width:50px" />Galeri</th>
+        </tr>
+
+    }
+</table>
+<a href="/Admin/Footer/CreateFooter" class="btn btn-primary">Yeni Footer</a>
+
+
