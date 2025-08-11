@@ -1,0 +1,26 @@
+﻿@using BabyCareProject.Dtos.AboutDtos
+@model CreateAboutDto
+@{
+    ViewData["Title"] = "CreateAbout";
+}
+
+<h1>Yeni Hakkında Ekle</h1>
+
+<form method="post" asp-area="Admin">
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+    <label>Madde</label>
+    <input type="text" asp-for="Article" class="form-control" />
+    <br />
+    <label>Video Url</label>
+    <input type="text" asp-for="VideoUrl" class="form-control" />
+    <br />
+
+
+
+    <button class="btn btn-primary">Kaydet</button>
+</form>

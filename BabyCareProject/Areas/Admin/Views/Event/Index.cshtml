@@ -1,0 +1,47 @@
+﻿@using BabyCareProject.Dtos.EventDtos
+@model List<ResultEventDto>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<h1>Etkinlik</h1>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Tarih</th>
+        <th>Başlangıç Zamanı</th>
+        <th>Bitiş Zamanı</th>
+        <th>Konum</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Görsel Url</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <th>@item.Date</th>
+            <th>@item.StartTime</th>
+            <th>@item.EndTime</th>
+            <th>@item.Location</th>
+            <th>@item.Title</th>
+            <th>@item.Description</th>
+            <th>@item.ImageUrl</th>
+
+            <td>
+                <a href="/Admin/Event/Delete/@item.EventId" class="btn btn-danger">Sil</a>
+                <a href="/Admin/Event/UpdateEvent/@item.EventId" class="btn btn-info">Güncelle</a>
+            </td>
+
+        </tr>
+
+    }
+</table>
+<a href="/Admin/Event/CreateEvent" class="btn btn-primary">Ekle</a>
+

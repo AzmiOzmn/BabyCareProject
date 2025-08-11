@@ -1,8 +1,15 @@
 using BabyCareProject.DataAccess.Settings;
+using BabyCareProject.Services.AboutServices;
+using BabyCareProject.Services.EventServices;
 using BabyCareProject.Services.FooterServices;
+using BabyCareProject.Services.HeroServices;
 using BabyCareProject.Services.InstructorServices;
 using BabyCareProject.Services.NavbarServices;
 using BabyCareProject.Services.ProductSerrvices;
+using BabyCareProject.Services.ServiceServices;
+using BabyCareProject.Services.SocialMediaServices;
+using BabyCareProject.Services.TeamServices;
+using BabyCareProject.Services.TestimonialServices;
 using Microsoft.Extensions.Options;
 using System.Reflection;
 
@@ -23,6 +30,13 @@ builder.Services.AddScoped<IInstructorService, InstructorService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<INavbarService, NavbarService>();
 builder.Services.AddScoped<IFooterService, FooterService>();
+builder.Services.AddScoped<IAboutService, AboutService>();
+builder.Services.AddScoped<IEventService, EventService>();
+builder.Services.AddScoped<IHeroService, HeroService>();
+builder.Services.AddScoped<IServiceService, ServiceService>();
+builder.Services.AddScoped<ISocialMediaService, SocialMediaService>();
+builder.Services.AddScoped<ITeamService, TeamService>();
+builder.Services.AddScoped<ITestimonialService, TestimonialService>();
 
 builder.Services.AddControllersWithViews();
 

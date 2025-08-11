@@ -1,0 +1,42 @@
+﻿@using BabyCareProject.Dtos.AboutDtos
+@model List<ResultAboutDto>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<h1>Hakkında</h1>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Madde</th>
+        <th>Video Url</th>
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <th>@item.Title</th>
+            <th>@item.Description</th>
+            <th>@item.Article</th>
+            <th>@item.VideoUrl</th>
+           
+            <td>
+                <a href="/Admin/About/Delete/@item.AboutId" class="btn btn-danger">Sil</a>
+                <a href="/Admin/About/UpdateAbout/@item.AboutId" class="btn btn-info">Güncelle</a>
+            </td>
+        
+        </tr>
+
+    }
+</table>
+<a href="/Admin/About/CreateAbout" class="btn btn-primary">Ekle</a>
+
+
